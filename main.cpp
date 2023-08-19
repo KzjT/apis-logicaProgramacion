@@ -3,7 +3,7 @@
 #include <ctime>
 
 using namespace std;
-
+//Trabajo realizado por Lucas Marchese (Lukjjz)
 int main() {
 	
 	//definimos variables int
