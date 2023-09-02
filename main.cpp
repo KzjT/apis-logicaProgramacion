@@ -18,6 +18,7 @@ bool numeroExistente(int numero, int *array, int longitud) {
 }
 
 //funcion para mostrar numeros ingresados de forma dinamica
+/*
 void mostrarNumerosIngresados(const int *array, int longitud) {
 	
     cout <<endl<< "-Números ingresados hasta ahora: ";
@@ -26,6 +27,8 @@ void mostrarNumerosIngresados(const int *array, int longitud) {
     }
     cout << endl;
 }
+
+*/
 
 //funcion para desplegar asteriscos como separadores
 void imprimirLineaAsteriscos(int longitud) {
@@ -42,6 +45,21 @@ void imprimirLineaError(int longitud) {
     }
     cout << endl;
 }
+
+
+void ordenarNumerosUsuario(int *array, int longitud) {
+    for (int i = 0; i < longitud - 1; i++) {
+        for (int j = 0; j < longitud - i - 1; j++) {
+            if (array[j] > array[j + 1]) {
+            	
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
+
 
 
 int main() {
@@ -137,8 +155,12 @@ int main() {
             numerosUsuarioContainerLength++;
             
 
-            mostrarNumerosIngresados(numerosUsuarioContainer, numerosUsuarioContainerLength);
-            
+          ordenarNumerosUsuario(numerosUsuarioContainer, numerosUsuarioContainerLength);
+			cout << "-Números Utilizados: ";
+			for (int i = 0; i < numerosUsuarioContainerLength; i++) {
+    		cout << numerosUsuarioContainer[i] << " ";
+			}
+			
  
  
         	//decrece los intentos restantes, aumentamos los gastados.
